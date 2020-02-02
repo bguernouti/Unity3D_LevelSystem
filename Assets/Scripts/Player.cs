@@ -1,10 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private float speed = 2;
+    [Header("Objects")]
+    public LevelObject GameLevelSystem;
+
+    public int ScoreValue;
+
+    private float speed = 4;
 
     void Update() {
         
@@ -20,6 +23,6 @@ public class Player : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        
+        GameLevelSystem.GameLevel.UpdateScore(ScoreValue);
     }
 }
