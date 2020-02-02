@@ -5,8 +5,8 @@ public class Level
 {
     public int _Number;
     public int _Score;
+    public int _MaxScore;
 
-    [UnityEngine.SerializeField]private int _MaxScore;
     private Dictionary<int,int> _AllLevels = new Level_List()._list; 
 
     public Level() {
@@ -34,7 +34,6 @@ public class Level
     public void UpdateScore(int ScoreToAdd){
 
         _Score += ScoreToAdd;
-
         if (_Score > _MaxScore){
             UpdateLevel();
         }
