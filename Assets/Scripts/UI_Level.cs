@@ -16,11 +16,10 @@ public class UI_Level : MonoBehaviour
 
     void Update(){
         LevelScore.text = BeforeNumber + " " + GameLevel.GameLevel._Number.ToString();
-        LevelMax.text = GameLevel.GameLevel._Score.ToString();
+        int percent = (GameLevel.GameLevel._Score * 100) / GameLevel.GameLevel._MaxScore;
+        LevelMax.text = percent.ToString() + " %";
 
         ScoreSlider.maxValue = GameLevel.GameLevel._MaxScore;
-
-        // float SliderValue = (float) GameLevel.GameLevel._Score / (float)GameLevel.GameLevel._MaxScore;
-        ScoreSlider.value =  GameLevel.GameLevel._Score;
+        ScoreSlider.value =  GameLevel.GameLevel._Score ;
     }
 }
